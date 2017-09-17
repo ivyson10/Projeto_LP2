@@ -19,3 +19,4 @@ six==1.10.0
 SQLAlchemy==1.1.13
 SQLAlchemy-Utils==0.32.16
 urllib3==1.22
+# dependências tudo ok!
