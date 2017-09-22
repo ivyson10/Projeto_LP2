@@ -1,0 +1,4 @@
+from view import login
+
+if __name__ == '__main__':
+    login.main()

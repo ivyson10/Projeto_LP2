@@ -1,23 +1,10 @@
-<<<<<<< HEAD
-from sqlalchemy import (create_engine, MetaData, Column, Table,
-                        Integer, String, Date, DateTime,Numeric, ForeignKey)
-=======
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine, MetaData, Column, Table, Integer, String, Date, DateTime,Numeric, ForeignKey)
 from sqlalchemy_utils import create_database, database_exists
-from sqlalchemy import Table, Column, Integer, String, ForeignKey, MetaData, Float
->>>>>>> f6a6cb9efea89dcb06f571261966632b8689affd
 
 database  = "mysql+mysqldb://root:xrl832k.@localhost:3306/bdvendas.db"
-
-<<<<<<< HEAD
-engine = create_engine('sqlite:///bdvendas.db', echo=True)
-=======
 engine = create_engine(database,echo = True)
 if not database_exists(engine.url):
     create_database(engine.url)
-
-metadata = MetaData(bind=engine)
->>>>>>> f6a6cb9efea89dcb06f571261966632b8689affd
 
 metadata = MetaData(bind=engine)
 
