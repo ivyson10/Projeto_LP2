@@ -1,0 +1,92 @@
+#:include widgets.kv
+
+<RootWidget>:
+    RootLayout:
+        id: login_layout
+        orientation: 'vertical'
+        padding: -10, 30, 10, 30
+        CustomLabel:
+            text: "Cadastro Funcionário"
+        BoxLayout:
+            halign: 'center'
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'Nome:'
+                
+            LoginTextInput:
+                id: nome
+                multiline:False
+
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'CPF:'
+                
+            LoginTextInput:
+                id: cpf
+                multiline:False
+
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'Celular:'
+    
+            LoginTextInput:
+                id: celular
+                multiline:False
+
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'Rua:'
+            LoginTextInput:
+                id: rua
+                multiline: False
+
+        BoxLayout:
+            CustomLabel:
+                text: 'Numero:'
+                
+            LoginTextInput:
+                id: numero
+                multiline: False
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'Bairro:'
+                
+            LoginTextInput:
+                id: bairro
+                multiline:False
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'Cidade:'
+                
+            LoginTextInput:
+                id: cidade
+                multiline:False
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'CEP:'
+                
+            LoginTextInput:
+                id: cep
+                multiline:False
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'Senha:'
+                
+            LoginTextInput:
+                id: senha
+                multiline:False
+                password:True
+
+        Button:
+            id: Cadastrar
+            text: 'Cadastrar'
+            font_size: 24
+            size_hint: .8, 2.
+            pos_hint: {"x": .12, "y": 1.0}

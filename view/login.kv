@@ -1,4 +1,6 @@
 #:include connected.kv
+#:include regfunc.kv
+#:include menu.kv
 
 <Login>:
     BoxLayout
@@ -44,3 +46,8 @@
             font_size: 24
 
             on_press: root.do_login(login.text, password.text)
+        
+        Button:
+            text: 'Registrar'
+            font_size: 24
+            on_press: root.do_registro()

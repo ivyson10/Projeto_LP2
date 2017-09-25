@@ -3,7 +3,9 @@ from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 import os
 
-from view.connected import Connected
+from connected import Connected
+from regfunc import RootWidget
+from menu import RootWidget1
 
 class Login(Screen):
     def do_login(self, loginText, passwordText):
@@ -13,7 +15,7 @@ class Login(Screen):
         app.password = passwordText
 
         self.manager.transition = SlideTransition(direction="left")
-        self.manager.current = 'connected'
+        self.manager.current = 'menu'
 
         app.config.read(app.get_application_config())
         app.config.write()
@@ -22,15 +24,21 @@ class Login(Screen):
         self.ids['login'].text = ""
         self.ids['password'].text = ""
 
+    def do_registro(self):
+        
+        self.manager.transition = SlideTransition(direction="left")
+        self.manager.current = 'regfunc'
+
 class LoginApp(App):
     username = StringProperty(None)
     password = StringProperty(None)
 
     def build(self):
         manager = ScreenManager()
-
+        
         manager.add_widget(Login(name='login'))
-        manager.add_widget(Connected(name='connected'))
+        manager.add_widget(RootWidget(name='regfunc'))
+        manager.add_widget(RootWidget1(name='menu'))
 
         return manager
 

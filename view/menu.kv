@@ -1,0 +1,30 @@
+#:include widgets.kv
+#:include regcliente.kv
+#:include venda.kv
+
+<RootWidget1>:
+
+    BoxLayout:
+        halign: 'center'
+        orientation: 'vertical'
+        Button:
+            id: Cadastrar
+            text: 'Cadastrar Cliente'
+            font_size: 24
+            size_hint: .8, 2.
+            pos_hint: {"x": .12, "y": -1.0}
+            on_press: root.tlCadCliente()
+        Button:
+            id: Venda
+            text: 'Venda'
+            font_size: 24
+            size_hint: .8, 2.
+            pos_hint: {"x": .12, "y": -1.0}
+            on_press: root.CadVenda()
+        Button:
+            id: produto
+            text: 'Cadastro Produto'
+            font_size: 24
+            size_hint: .8, 2.
+            pos_hint: {"x": .12, "y": -1.0}
+            on_press: root.CadProduto()

@@ -1,0 +1,37 @@
+#:include widgets.kv
+
+<RootWidget2>:
+    RootLayout:
+        id: login_layout
+        orientation: 'vertical'
+        padding: -10, 30, 10, 30
+        
+        BoxLayout:
+            halign: 'center'
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'Código do produto:'
+                
+            LoginTextInput:
+                id: cod
+                multiline:False
+
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'valor:'
+                
+            LoginTextInput:
+                id: valor
+                multiline:False
+
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'troco:'
+    
+            LoginTextInput:
+                id: troco
+                multiline:False
+
+      

@@ -1,0 +1,42 @@
+#:include widgets.kv
+
+<RootWidget4>:
+    RootLayout:
+        id: login_layout
+        orientation: 'vertical'
+        padding: -10, 30, 10, 30
+        
+        BoxLayout:
+            halign: 'center'
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'Código do produto:'
+                
+            LoginTextInput:
+                id: cod
+                multiline:False
+
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'valor:'
+                
+            LoginTextInput:
+                id: valor
+                multiline:False
+
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomLabel:
+                text: 'unidade:'
+    
+            LoginTextInput:
+                id: und
+                multiline:False
+
+        Button:
+            id: Cadastrar
+            text: 'Cadastrar'
+            font_size: 24
+            size_hint: .8, 2.
+            pos_hint: {"x": .12, "y": 1.0}
