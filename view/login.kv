@@ -1,53 +1,40 @@
-#:include connected.kv
-#:include regfunc.kv
-#:include menu.kv
-
+#:import MDTextField kivymd.textfields.MDTextField 
+#:import ThemeManager kivymd.theming.ThemeManager 
+#:import MDBottomNavigation kivymd.tabs.MDBottomNavigation 
 <Login>:
-    BoxLayout
-        id: login_layout
+    BoxLayout:
         orientation: 'vertical'
-        padding: [10,50,10,50]
-        spacing: 50
+        padding: [10, -180, 10, 50]
+        spacing: 20
 
-        Label:
-            text: 'Welcome'
-            font_size: 32
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                # self here refers to the widget i.e BoxLayout
+                pos: self.pos
+                size: self.size
 
-        BoxLayout:
-            orientation: 'vertical'
-
-            Label:
-                text: 'Login'
-                font_size: 18
-                halign: 'left'
-                text_size: root.width-20, 20
-
-            TextInput:
-                id: login
-                multiline:False
-                font_size: 28
-
-        BoxLayout:
-            orientation: 'vertical'
-            Label:
-                text: 'Password'
-                halign: 'left'
-                font_size: 18
-                text_size: root.width-20, 20
-
-            TextInput:
-                id: password
-                multiline:False
-                password:True
-                font_size: 28
-
-        Button:
-            text: 'Connexion'
-            font_size: 24
-
-            on_press: root.do_login(login.text, password.text)
+        Image:
+            size_hint: 1., 4.
+            source: 'images/logo.gif'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10, -20, 10, 30
+        spacing: 40
+        MDTextField:
+            hint_text: 'Login'
+            multiline: False
+            
+        MDTextField:
+            hint_text: 'Senha'
+            multiline: False
+            password: True
+        MDRaisedButton:
+            text: 'Entrar'
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            on_press: root.manager.current = 'principal'
         
-        Button:
-            text: 'Registrar'
-            font_size: 24
-            on_press: root.do_registro()
+        
+    
