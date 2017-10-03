@@ -1,0 +1,37 @@
+#:import MDTextField kivymd.textfields.MDTextField 
+#:import ThemeManager kivymd.theming.ThemeManager 
+#:import MDBottomNavigation kivymd.tabs.MDBottomNavigation 
+<CadastroFornecedor>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10, -20, 10, 30
+        spacing: 20
+        MDTextField:
+            hint_text: 'Nome'
+            multiline: False
+        MDTextField:
+            hint_text: 'CPF/CNPJ'
+            multiline: False
+        MDTextField:
+            hint_text: 'Telefone'
+            multiline: False  
+        MDTextField:
+            hint_text: 'Email'
+            multiline: False
+        MDTextField:
+            hint_text: 'Rua'
+            multiline: False
+        MDTextField:
+            hint_text: 'Numero'
+            multiline: False
+        MDTextField:
+            hint_text: 'Bairro'
+            multiline: False
+        MDTextField:
+            hint_text: 'Cidade'
+            multiline: False
+        MDRaisedButton:
+            text: 'Cadastrar'
+            size_hint: None, None
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+        

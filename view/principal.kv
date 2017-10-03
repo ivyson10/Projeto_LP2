@@ -12,12 +12,14 @@
             icon: "face"
             BoxLayout:
                 orientation: 'vertical'
+                padding: [10,100,10,10] 
                 MDFloatingActionButton:
                     id:                    float_act_btn
                     icon:                'plus'
                     opposite_colors:    True
                     elevation_normal:    8
-                    pos_hint:            {'center_x': 0.5, 'center_y': 0.2}
+                    pos_hint:            {'center_x': .9, 'top': 1.0}
+                    on_press: root.manager.current = 'cadastrocliente'
                     
         MDBottomNavigationItem:
             name: 'Vendedor'
@@ -25,13 +27,15 @@
             icon: 'face'
             BoxLayout:
                 orientation: 'vertical'
-                size_hint_y: None
-                padding: dp(48)
-                spacing: 10
-                MDTextField:
-                    hint_text: "You can put any widgets here"
-                    helper_text: "Hello :)"
-                    helper_text_mode: "on_focus"
+                padding: [10,100,10,10] 
+                MDFloatingActionButton:
+                    id:                    float_act_btn
+                    icon:                'plus'
+                    opposite_colors:    True
+                    elevation_normal:    8
+                    pos_hint:            {'center_x': .9, 'top': 1.0}
+                    on_press: root.manager.current = 'cadastrovendedor'
+                    
         MDBottomNavigationItem:
             name: 'Fornecedor'
             text: "Fornecedor"
@@ -39,11 +43,14 @@
             id: bottom_navigation_desktop_1
             BoxLayout:
                 orientation: 'vertical'
-                size_hint_y: None
-                padding: dp(48)
-                spacing: 10
-                MDTextField:
-                    hint_text: "Hello again"
+                padding: [10,100,10,10] 
+                MDFloatingActionButton:
+                    id:                    float_act_btn
+                    icon:                'plus'
+                    opposite_colors:    True
+                    elevation_normal:    8
+                    pos_hint:            {'center_x': .9, 'top': 1.0}
+                    on_press: root.manager.current = 'cadastrofornecedor'
         MDBottomNavigationItem:
             name: 'Settings'
             text: "Configurações"
