@@ -1,9 +1,8 @@
-
 from sqlalchemy import select
-from tb_restaurante import tb_cliente, tb_produto
+from bd_informatica import cli_table
+import os
 
-
-s = select([tb_produto])
+s = select([cli_table])
 
 for row in s.execute():
     print(row)

@@ -6,11 +6,11 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.theming import ThemeManager
 import os
 
-from login import Login
-from principal import Principal
-from cadastrocliente import CadastroCliente
-from cadastrovendedor import CadastroVendedor
-from cadastrofornecedor import CadastroFornecedor
+from view.login import Login
+from view.principal import Principal
+from view.cadastrocliente import CadastroCliente
+from view.cadastrovendedor import CadastroVendedor
+from view.cadastrofornecedor import CadastroFornecedor
 
 class MeuApp(App): 
     theme_cls = ThemeManager()
@@ -22,6 +22,7 @@ class MeuApp(App):
         manager.add_widget(CadastroVendedor(name='cadastrovendedor'))
         manager.add_widget(CadastroFornecedor(name='cadastrofornecedor'))
         return manager 
- 
+def main():
+    MeuApp().run()
 if   __name__  == '__main__': 
-    MeuApp().run() 
+    main() 

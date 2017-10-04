@@ -14,8 +14,7 @@ cli_table = Table('tbCliente', metadata,
                     Column('CLI_RG', String(15), nullable=False),
                     Column('CLI_NOME', String(50), index=True),
                     Column('CLI_TEL', String(15), nullable=False),
-                    Column('CLI_EMAIL', String(45)),
-                    Column('CLI_DT_NASC', Date))
+                    Column('CLI_EMAIL', String(45)))
 
 ven_table = Table('tbVendedor', metadata,
                     Column('VEN_ID', Integer, primary_key=True),

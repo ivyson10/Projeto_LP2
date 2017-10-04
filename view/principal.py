@@ -4,7 +4,7 @@ from kivymd.theming import ThemeManager
 
 
 
-Builder.load_file('principal.kv') 
+Builder.load_file('view/principal.kv') 
 
 class Principal(Screen):
     pass

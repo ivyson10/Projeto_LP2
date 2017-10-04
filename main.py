@@ -1,4 +1,4 @@
-from view import login
+from view import meu
 
 if __name__ == '__main__':
-    login.main()
+    meu.main()

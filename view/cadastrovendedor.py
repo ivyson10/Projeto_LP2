@@ -2,7 +2,7 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen 
 
 
-Builder.load_file('cadastrovendedor.kv') 
+Builder.load_file('view/cadastrovendedor.kv') 
 
 class CadastroVendedor(Screen):
     def aviso_cadastro(self):
