@@ -4,23 +4,81 @@
 #:import OneLineAvatarIconListItem kivymd.list.OneLineAvatarIconListItem
 #:import MDThemePicker kivymd.theme_picker.MDThemePicker
 
+#:import Toolbar kivymd.toolbar.Toolbar
+#:import ThemeManager kivymd.theming.ThemeManager
+#:import MDNavigationDrawer kivymd.navigationdrawer.MDNavigationDrawer
+#:import NavigationLayout kivymd.navigationdrawer.NavigationLayout
+#:import NavigationDrawerDivider kivymd.navigationdrawer.NavigationDrawerDivider
+#:import NavigationDrawerToolbar kivymd.navigationdrawer.NavigationDrawerToolbar
+#:import NavigationDrawerSubheader kivymd.navigationdrawer.NavigationDrawerSubheader
+#:import MDCheckbox kivymd.selectioncontrols.MDCheckbox
+#:import MDSwitch kivymd.selectioncontrols.MDSwitch
+#:import MDList kivymd.list.MDList
+#:import OneLineListItem kivymd.list.OneLineListItem
+#:import TwoLineListItem kivymd.list.TwoLineListItem
+#:import ThreeLineListItem kivymd.list.ThreeLineListItem
+#:import OneLineAvatarListItem kivymd.list.OneLineAvatarListItem
+#:import OneLineIconListItem kivymd.list.OneLineIconListItem
+#:import OneLineAvatarIconListItem kivymd.list.OneLineAvatarIconListItem
+#:import MDTextField kivymd.textfields.MDTextField
+#:import MDSpinner kivymd.spinner.MDSpinner
+#:import MDCard kivymd.card.MDCard
+#:import MDSeparator kivymd.card.MDSeparator
+#:import MDDropdownMenu kivymd.menu.MDDropdownMenu
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import colors kivymd.color_definitions.colors
+#:import SmartTile kivymd.grid.SmartTile
+#:import MDSlider kivymd.slider.MDSlider
+#:import MDTabbedPanel kivymd.tabs.MDTabbedPanel
+#:import MDTab kivymd.tabs.MDTab
+#:import MDProgressBar kivymd.progressbar.MDProgressBar
+#:import MDAccordion kivymd.accordion.MDAccordion
+#:import MDAccordionItem kivymd.accordion.MDAccordionItem
+#:import MDAccordionSubItem kivymd.accordion.MDAccordionSubItem
+#:import MDThemePicker kivymd.theme_picker.MDThemePicker
+#:import MDBottomNavigation kivymd.tabs.MDBottomNavigation
+#:import MDBottomNavigationItem kivymd.tabs.MDBottomNavigationItem
+
+
 <Principal>:
 
     MDBottomNavigation:
         id: Menu
         MDBottomNavigationItem:
+            name: 'Principal'
+            text: "Principal"
+            icon: "bank"
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 10, -20, 10, 30
+                spacing: 20
+                
+        MDBottomNavigationItem:
             name: 'Cliente'
             text: "Cliente"
             icon: "face"
             BoxLayout:
+                orientation: 'horizontal'
+                padding: 20, -20, 20, 30
+                spacing: 20
+                MDTextField:
+                    id: nome
+                    hint_text: 'CPF'
+                    multiline: False
+                    pos_hint: {'center_x': 0.8, 'center_y': 0.85}
+                MDRaisedButton:
+                    text: 'Procurar'
+                    size_hint: None, None
+                    pos_hint: {'center_x': 0.8, 'center_y': 0.85}
+            BoxLayout:
                 orientation: 'vertical'
-                padding: [10,100,10,10] 
+                padding: 10,100,10,10
                 MDFloatingActionButton:
                     id:                    float_act_btn
                     icon:                'plus'
                     opposite_colors:    True
                     elevation_normal:    8
-                    pos_hint:            {'center_x': .9, 'top': 1.0}
+                    pos_hint:            {'center_x': .95, 'top': 1.0}
                     on_press: root.manager.current = 'cadastrocliente'
                     
         MDBottomNavigationItem:
@@ -58,4 +116,12 @@
             text: "Configurações"
             icon: 'settings'
             id: bottom_navigation_desktop_2
-            
+            ScrollView:
+                do_scroll_x: False
+                MDList:
+                    id: ml
+                    OneLineListItem:
+                        text: 'Change theme'
+                        on_press: MDThemePicker().open()
+                            
+                

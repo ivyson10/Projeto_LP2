@@ -16,7 +16,7 @@ class CadastroCliente(Screen):
         self.ids['nome'] = ""
         self.ids['telefone'] = ""
         self.ids['email'] = ""
-        print("func!")
+        
 
     def aviso_cadastro(self):
         content = MDLabel(font_style='Body1',
