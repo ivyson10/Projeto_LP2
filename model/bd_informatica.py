@@ -22,9 +22,9 @@ ven_table = Table('tbVendedor', metadata,
                     Column('VEN_RG', String(15), nullable=False),
                     Column('VEN_NOME', String(50), index=True),
                     Column('VEN_TEL', String(15), nullable=False),
-                    Column('VEN_EMAIL', String(45)),
-                    Column('VEN_DT_NASC', Date),
-                    Column('VEN_DT_NASC', Numeric))
+                    Column('VEN_EMAIL', String(45)))
+                   # Column('VEN_DT_NASC', Date),
+                  #  Column('VEN_DT_NASC', Numeric))
 
 for_table = Table('tbFornecedor', metadata,
                     Column('FOR_ID', Integer, primary_key=True),

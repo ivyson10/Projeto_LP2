@@ -7,28 +7,27 @@
         padding: 10, -20, 10, 30
         spacing: 20
         MDTextField:
+            id: nome
             hint_text: 'Nome'
             multiline: False
         MDTextField:
+            id: rg
             hint_text: 'RG'
             multiline: False
         MDTextField:
+            id: cpf
             hint_text: 'CPF'
             multiline: False
         MDTextField:
+            id: telefone
             hint_text: 'Telefone'
             multiline: False  
         MDTextField:
+            id: email
             hint_text: 'Email'
-            multiline: False
-        MDTextField:
-            hint_text: 'Data de Nascimento'
-            multiline: False
-        MDTextField:
-            hint_text: 'Salario'
             multiline: False
         MDRaisedButton:
             text: 'Cadastrar'
             size_hint: None, None
             pos_hint: {'center_x': 0.5, 'center_y': 0.6}
-        
+            on_press: root.cadastro_vendedor(cpf.text, rg.text,nome.text,telefone.text,email.text)

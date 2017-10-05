@@ -10,7 +10,7 @@ from model.crud_cliente import insert_cliente
 Builder.load_file('view/cadastrocliente.kv') 
 
 class CadastroCliente(Screen):
-    def reset_form(self):
+    def reset_form(self): # revisar essa função!
         self.ids['cpf'] = ""
         self.ids['rg'] = ""
         self.ids['nome'] = ""
@@ -45,6 +45,6 @@ class CadastroCliente(Screen):
         insert_cliente(app.cpf, app.rg, app.nome, app.telefone, app.email)
         popup = CadastroCliente()
         popup.aviso_cadastro()
-        self.manager.get_screen('cadastrocliente').reset_form()
+        
 
     

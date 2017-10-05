@@ -86,21 +86,18 @@
             text: "Vendedor"
             icon: 'face'
             BoxLayout:
-                orientation: 'vertical'
-                padding: [10,100,10,10] 
-                MDFloatingActionButton:
-                    id:                    float_act_btn
-                    icon:                'plus'
-                    opposite_colors:    True
-                    elevation_normal:    8
-                    pos_hint:            {'center_x': .9, 'top': 1.0}
-                    on_press: root.manager.current = 'cadastrovendedor'
-                    
-        MDBottomNavigationItem:
-            name: 'Fornecedor'
-            text: "Fornecedor"
-            icon: 'truck'
-            id: bottom_navigation_desktop_1
+                orientation: 'horizontal'
+                padding: 20, -20, 20, 30
+                spacing: 20
+                MDTextField:
+                    id: nome
+                    hint_text: 'CPF'
+                    multiline: False
+                    pos_hint: {'center_x': 0.8, 'center_y': 0.85}
+                MDRaisedButton:
+                    text: 'Procurar'
+                    size_hint: None, None
+                    pos_hint: {'center_x': 0.8, 'center_y': 0.85}
             BoxLayout:
                 orientation: 'vertical'
                 padding: [10,100,10,10] 
@@ -109,7 +106,36 @@
                     icon:                'plus'
                     opposite_colors:    True
                     elevation_normal:    8
-                    pos_hint:            {'center_x': .9, 'top': 1.0}
+                    pos_hint:            {'center_x': .95, 'top': 1.0}
+                    on_press: root.manager.current = 'cadastrovendedor'
+                    
+        MDBottomNavigationItem:
+            name: 'Fornecedor'
+            text: "Fornecedor"
+            icon: 'truck'
+            id: bottom_navigation_desktop_1
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: 20, -20, 20, 30
+                spacing: 20
+                MDTextField:
+                    id: nome
+                    hint_text: 'CPF'
+                    multiline: False
+                    pos_hint: {'center_x': 0.8, 'center_y': 0.85}
+                MDRaisedButton:
+                    text: 'Procurar'
+                    size_hint: None, None
+                    pos_hint: {'center_x': 0.8, 'center_y': 0.85}
+            BoxLayout:
+                orientation: 'vertical'
+                padding: [10,100,10,10] 
+                MDFloatingActionButton:
+                    id:                    float_act_btn
+                    icon:                'plus'
+                    opposite_colors:    True
+                    elevation_normal:    8
+                    pos_hint:            {'center_x': .95, 'top': 1.0}
                     on_press: root.manager.current = 'cadastrofornecedor'
         MDBottomNavigationItem:
             name: 'Settings'

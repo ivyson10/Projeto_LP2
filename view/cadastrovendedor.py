@@ -1,6 +1,7 @@
 from kivy.lang import Builder 
 from kivy.uix.screenmanager import ScreenManager, Screen 
-
+from kivy.app import App
+from model.crud_vendedor import insert_vendedor
 
 Builder.load_file('view/cadastrovendedor.kv') 
 
@@ -21,3 +22,13 @@ class CadastroVendedor(Screen):
         self.dialog.add_action_button("OK",
                                       action=lambda *x: self.dialog.dismiss())
         self.dialog.open()
+    def cadastro_vendedor(self,cpfText,rgText,nomeText,telefoneText,emailText):
+        app = App.get_running_app()
+        app.cpf = cpfText
+        app.rg = rgText
+        app.nome = nomeText
+        app.telefone = telefoneText
+        app.email = emailText
+        insert_vendedor(app.cpf, app.rg, app.nome, app.telefone, app.email)
+        popup = CadastroVendedor()
+        popup.aviso_cadastro()
