@@ -22,13 +22,14 @@ class CadastroVendedor(Screen):
         self.dialog.add_action_button("OK",
                                       action=lambda *x: self.dialog.dismiss())
         self.dialog.open()
-    def cadastro_vendedor(self,cpfText,rgText,nomeText,telefoneText,emailText):
+    def cadastro_vendedor(self,cpfText,rgText,nomeText,telefoneText,emailText,senhaText):
         app = App.get_running_app()
         app.cpf = cpfText
         app.rg = rgText
         app.nome = nomeText
         app.telefone = telefoneText
         app.email = emailText
-        insert_vendedor(app.cpf, app.rg, app.nome, app.telefone, app.email)
+        app.senha = senhaText
+        insert_vendedor(app.cpf, app.rg, app.nome, app.telefone, app.email, app.senha)
         popup = CadastroVendedor()
         popup.aviso_cadastro()

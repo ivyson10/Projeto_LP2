@@ -26,8 +26,13 @@
             id: email
             hint_text: 'Email'
             multiline: False
+        MDTextField:
+            id: senha
+            hint_text: 'Senha'
+            password: True
+            multiline: False
         MDRaisedButton:
             text: 'Cadastrar'
             size_hint: None, None
             pos_hint: {'center_x': 0.5, 'center_y': 0.6}
-            on_press: root.cadastro_vendedor(cpf.text, rg.text,nome.text,telefone.text,email.text)
+            on_press: root.cadastro_vendedor(cpf.text, rg.text,nome.text,telefone.text,email.text,senha.text)
