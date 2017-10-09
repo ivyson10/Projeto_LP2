@@ -6,7 +6,7 @@ import bcrypt
 def insert_vendedor(cpf, rg, nome, telefone, email, senha):
     conn  = engine.connect()
     ins = ven_table.insert()
-    new_vendedor = ins.values([ cpf, rg, nome, telefone, email, senha])
+    new_vendedor = ins.values(["", cpf, rg, nome, telefone, email, bcrypt.hashpw(senha.encode('utf-8'),bcrypt.gensalt())])
     conn.execute(new_vendedor)
 
 def update_vendedor(id,cpf, rg, nome, telefone, email,senha):

@@ -1,6 +1,9 @@
 from kivy.lang import Builder 
 from kivy.uix.screenmanager import ScreenManager, Screen 
 from kivy.app import App
+from kivymd.label import MDLabel
+from kivymd.dialog import MDDialog
+from kivy.metrics import dp
 from model.crud_vendedor import insert_vendedor
 
 Builder.load_file('view/cadastrovendedor.kv') 

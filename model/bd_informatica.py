@@ -23,7 +23,7 @@ ven_table = Table('tbVendedor', metadata,
                     Column('VEN_NOME', String(50), index=True),
                     Column('VEN_TEL', String(15), nullable=False),
                     Column('VEN_EMAIL', String(45)),
-                    Column('VEN_SENHA', String(80)nullable = ))
+                    Column('VEN_SENHA', String(80), nullable =False))
                   
                    # Column('VEN_DT_NASC', Date),
                    # Column('VEN_DT_NASC', Numeric))
