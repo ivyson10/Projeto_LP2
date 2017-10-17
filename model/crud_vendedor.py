@@ -6,7 +6,7 @@ import bcrypt
 def insert_vendedor(cpf, rg, nome, telefone, email, senha):
     conn  = engine.connect()
     ins = ven_table.insert()
-    new_vendedor = ins.values(["", cpf, rg, nome, telefone, email, bcrypt.hashpw(senha.encode('utf-8'),bcrypt.gensalt())])
+    new_vendedor = ins.values(['',cpf, rg, nome, telefone, email, bcrypt.hashpw(senha.encode('utf-8'),bcrypt.gensalt())])
     conn.execute(new_vendedor)
 
 def update_vendedor(id,cpf, rg, nome, telefone, email,senha):
@@ -20,3 +20,6 @@ def delete_vendedor(id):
     conn = engine.connect()
     delet = delete(ven_table).where(ven_table.c.id == id)
     conn.execute(delet)
+
+if __name__ == '__main__':
+    pass

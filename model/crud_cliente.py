@@ -5,7 +5,7 @@ from model.bd_informatica import cli_table, engine
 def insert_cliente(cpf, rg, nome, telefone, email):
     conn  = engine.connect()
     ins = cli_table.insert()
-    new_cliente = ins.values([cpf, rg, nome, telefone, email])
+    new_cliente = ins.values([None, cpf, rg, nome, telefone, email])
     conn.execute(new_cliente)
 
 def update_cliente(id,cpf, rg, nome, telefone, email):

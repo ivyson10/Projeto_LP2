@@ -3,13 +3,11 @@ from sqlalchemy_utils import create_database, database_exists
 
 database  = "mysql+mysqldb://root:xrl832k.@localhost:3306/bdvendas.db"
 engine = create_engine(database,echo = True)
-if not database_exists(engine.url):
-    create_database(engine.url)
 
 metadata = MetaData(bind=engine)
 
 cli_table = Table('tbCliente', metadata,
-                    Column('CLI_ID', Integer, primary_key=True),
+                    Column('CLI_ID', Integer, primary_key=True, nullable=False),
                     Column('CLI_CPF', String(15), nullable=False),
                     Column('CLI_RG', String(15), nullable=False),
                     Column('CLI_NOME', String(50), index=True),
@@ -70,4 +68,3 @@ fornece_table = Table('tbFornece', metadata,
                     Column('FOR_ID', Integer, ForeignKey('tbFornecedor.FOR_ID')),
                     Column('FORNECE_QTDE_PROD', Integer))
 
-metadata.create_all()
