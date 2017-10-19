@@ -25,16 +25,18 @@
         MDTextField:
             hint_text: 'Login'
             multiline: False
+            id: login
             
         MDTextField:
             hint_text: 'Senha'
             multiline: False
             password: True
+            id: senha
         MDRaisedButton:
             text: 'Entrar'
             size_hint: None, None
             pos_hint: {'center_x': 0.5, 'center_y': 0.6}
-            on_press: root.manager.current = 'principal'
+            on_press: root.entrar(login.text, senha.text)
         
         
     
