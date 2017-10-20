@@ -11,15 +11,20 @@ def insert_vendedor(cpf, rg, nome, telefone, email, senha):
 
 def update_vendedor(id,cpf, rg, nome, telefone, email,senha):
     conn = engine.connect()
-    upd = update(ven_table).where(ven_table.c.id == id)
+    upd = update(ven_table).where(ven_table.c.VEN_ID == id)
     upd = upd.values(cpf, rg, nome, telefone, email,senha)
     conn.execute(upd)
 
 
 def delete_vendedor(id):
     conn = engine.connect()
-    delet = delete(ven_table).where(ven_table.c.id == id)
+    delet = delete(ven_table).where(ven_table.c.VEN_ID == id)
     conn.execute(delet)
+    
+def pesquisa_vendedor(nome):
+        data = select([ven_table.c.VEN_ID, ven_table.c.VEN_NOME]).where(ven_table.c.VEN_NOME == nome).execute()
+        lista = list(data)
+        return lista
 
 def valida_senha(usuario, senha):
     s = select([ven_table])

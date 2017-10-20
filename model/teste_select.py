@@ -5,9 +5,9 @@ import os
 
 # conn = engine.connect()
 
-data = select([ven_table.c.VEN_ID, ven_table.c.VEN_NOME]).execute()
-print(data)
-print(list(data))
+data = select([ven_table.c.VEN_ID, ven_table.c.VEN_NOME]).where(ven_table.c.VEN_NOME == "ivyson").execute()
+lista = list(data)
+print(lista[0])
 
 #lista = list()
 #for row in select([ven_table]).execute():
