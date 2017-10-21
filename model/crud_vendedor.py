@@ -1,5 +1,5 @@
 from sqlalchemy import update, delete, select
-from model.bd_informatica import ven_table, engine
+from bd_informatica import ven_table, engine
 import bcrypt
 
 
@@ -29,6 +29,7 @@ def pesquisa_vendedor(nome):
 def valida_senha(usuario, senha):
     s = select([ven_table])
     for row in s.execute():
+        print(row)
         if(row[3] == usuario):
             salt = row[-1].encode('utf-8')
             senha_hashed = bcrypt.hashpw(senha.encode("utf-8"), salt)
