@@ -12,8 +12,10 @@ from view.cadastrocliente import CadastroCliente
 from view.cadastrovendedor import CadastroVendedor
 from view.cadastrofornecedor import CadastroFornecedor
 
+
 class MeuApp(App): 
     theme_cls = ThemeManager()
+   
     def build(self):
         manager = ScreenManager() 
         manager.add_widget(Login(name='login'))

@@ -1,5 +1,5 @@
 from sqlalchemy import update, delete, select
-from bd_informatica import ven_table, engine
+from model.bd_informatica import ven_table, engine
 import bcrypt
 
 
@@ -21,10 +21,12 @@ def delete_vendedor(id):
     delet = delete(ven_table).where(ven_table.c.VEN_ID == id)
     conn.execute(delet)
     
-def pesquisa_vendedor(nome):
-        data = select([ven_table.c.VEN_ID, ven_table.c.VEN_NOME]).where(ven_table.c.VEN_NOME == nome).execute()
+def pesquisa_vendedor(cpf):
+        data = select([ven_table.c.VEN_ID, ven_table.c.VEN_NOME]).where(ven_table.c.VEN_CPF == cpf).execute()
         lista = list(data)
-        return lista
+        for row in lista:
+            pass
+        return row
 
 def valida_senha(usuario, senha):
     s = select([ven_table])
