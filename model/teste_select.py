@@ -7,7 +7,7 @@ import os
 
 # conn = engine.connect()
 
-data = select([ven_table.c.VEN_ID, ven_table.c.VEN_NOME]).where(ven_table.c.VEN_CPF == "1").execute()
+data = select([ven_table.c.VEN_ID, ven_table.c.VEN_NOME]).execute()
 lista = list(data)
 print(lista)
 for row in lista:

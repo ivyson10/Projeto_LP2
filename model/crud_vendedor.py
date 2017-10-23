@@ -9,6 +9,7 @@ def insert_vendedor(cpf, rg, nome, telefone, email, senha):
     new_vendedor = ins.values([None,cpf, rg, nome, telefone, email, bcrypt.hashpw(senha.encode('utf-8'),bcrypt.gensalt())])
     conn.execute(new_vendedor)
 
+
 def update_vendedor(id):
     conn = engine.connect()
     upd = update(ven_table).where(ven_table.c.VEN_ID == id)

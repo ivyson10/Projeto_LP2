@@ -5,7 +5,7 @@ from bd_informatica import metadata
 database = 'mysql+mysqldb://root:xrl832k.@localhost:3306/bdvendas.db'
     
 engine = create_engine(database, echo=True)
-#drop_database(engine.url)
+drop_database(engine.url)
 create_database(engine.url)
 
 metadata.drop_all()
